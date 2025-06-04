@@ -2,9 +2,9 @@
 {  
     "mcpServers": {  
         "terminal": {  
-            "command": "/etc/profiles/per-user/shamma/bin/uv",  
+            "command": "uv",  
             "args": [  
-                "--directory", "/home/shamma/mcp/servers/terminal_server",  
+                "--directory", "/Users/shamsahamad/terminal_server",  
                 "run", "terminal_server.py"  
             ]  
         }  
