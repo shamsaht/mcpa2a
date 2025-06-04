@@ -80,7 +80,7 @@ def main(host: str, port: int, registry: str):
     # Build the AgentCard, which is served at /.well-known/agent.json
     orchestrator_card = AgentCard(
         name="OrchestratorAgent",                # Unique agent name
-        description="Delegates to TellTimeAgent, GreetingAgent, PX4SearchAgent, and MCP tools",
+        description="Delegates to TellTimeAgent, GreetingAgent, PX4SearchAgent, PX4SumarizerAgent and MCP tools",
         url=f"http://{host}:{port}/",            # Public endpoint where this agent listens
         version="1.0.0",                         # Semantic version of this agent
         defaultInputModes=["text"],              # Supported input modes
