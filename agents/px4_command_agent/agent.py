@@ -28,6 +28,7 @@ from google.genai import types
 # 🔐 Load environment variables (like API keys) from a `.env` file
 from dotenv import load_dotenv
 load_dotenv()  # Load variables into the system
+# This allows you to keep sensitive data out of your code.
 
 # -----------------------------------------------------------------------------
 # 🔧 PX4CommandAgent: AI agent that generates PX4 CLI commands from user input
@@ -108,9 +109,11 @@ class PX4CommandAgent:
         ):
             last_event = event
 
+        # 🧹 Fallback: return empty string if something went wrong
         if not last_event or not last_event.content or not last_event.content.parts:
             return "Unable to generate command."
 
+        # 📤 Extract and join all text responses into one string
         return "\n".join([p.text for p in last_event.content.parts if p.text])
 
     async def stream(self, query: str, session_id: str):
