@@ -66,7 +66,12 @@ class PX4CommandAgent:
             model="gemini-1.5-flash-latest",
             name="px4_command_agent",
             description="Generates PX4-compatible shell commands from user input.",
-            instruction="Given a user instruction, output the exact PX4 NSH command that accomplishes the task. Only return the command, nothing else."
+            instruction=(
+                "You are a PX4 shell assistant. Your job is to translate user input into a single valid PX4 shell command. "
+                "Respond with only the PX4 NSH or MAVLink command that should be executed — no explanation, no formatting, no markdown, and no extra output. "
+                "Example: if the user says 'arm the drone', return 'commander arm'."
+            )
+        
         )
 
     async def invoke(self, query: str, session_id: str) -> str:
