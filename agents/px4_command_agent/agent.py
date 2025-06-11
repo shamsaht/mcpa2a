@@ -97,7 +97,7 @@ class PX4CommandAgent:
         # Ask Gemini to convert the user query into a PX4 command
         content = types.Content(
             role="user",
-            parts=[types.Part.from_text(query)]
+            parts=[types.Part.from_text(text=query)]
         )
 
         last_event = None

@@ -45,7 +45,7 @@ logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option("--host", default="localhost", help="Host to bind the server to")
-@click.option("--port", default=10005, help="Port number for the server")
+@click.option("--port", default=10002, help="Port number for the server")
 def main(host, port):
     """
     This function sets up everything needed to start the agent server.

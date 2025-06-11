@@ -131,13 +131,12 @@ class PX4SummarizerAgent:
                 main_content = main_content[:8000]
 
             # 🧠 Step 4: Ask Gemini to summarize
+
+            summary_prompt = f"Summarize the following PX4 documentation content for a technical audience:\n\n{main_content}"
+
             content = types.Content(
                 role="user",
-                parts=[
-                    types.Part.from_text(
-                        f"Summarize the following PX4 documentation content for a technical audience:\n\n{main_content}"
-                    )
-                ]
+                parts=[types.Part.from_text(text=summary_prompt)]
             )
 
             last_event = None

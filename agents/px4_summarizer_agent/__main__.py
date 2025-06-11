@@ -45,11 +45,11 @@ logger = logging.getLogger(__name__)
 
 @click.command()
 @click.option("--host", default="localhost", help="Host to bind the server to")
-@click.option("--port", default=10004, help="Port number for the server")
+@click.option("--port", default=10002, help="Port number for the server")
 def main(host, port):
     """
     This function sets up everything needed to start the agent server.
-    You can run it via: `python -m agents.px4_summarizer_agent --host 0.0.0.0 --port 12345`
+    You can run it via: `uv run python3 -m agents.px4_summarizer_agent --host localhost --port 12345`
     """
 
     # Define what this agent can do – in this case, it does NOT support streaming
