@@ -4,7 +4,7 @@
         "terminal": {  
             "command": "uv",  
             "args": [  
-                "--directory", "/Users/shamsahamad/terminal_server",  
+                "--directory", "/home/shamsahamad/mcp/servers/terminal_server",  
                 "run", "terminal_server.py"  
             ]  
         }  
